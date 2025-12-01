@@ -1,30 +1,22 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
-// GET /
+let players = ["dhoni","virat","raina"];
 app.get('/', (req, res) => {
-  res.send('user done');
+  res.send(players);
 });
-// GET /user
-// app.get('/user', (req, res) => {
-//   res.send('user');
-// });
-// POST /user
 app.post('/', (req, res) => {
-  let user = {};
-  res.send("User created: ");
+  players.push("shana");
+  res.send(players);
 });
-// PUT /user
 app.put('/', (req, res) => {
-  let user = {};
-  res.send("User Updated");
+  players = "jaddu";
+  res.send(players);
 });
-// DELETE /user
 app.delete('/', (req, res) => {
-  let user = {};
-  res.send("User Deleted");
+  players.pop();
+  res.send(players);
 });
-// Start Server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
