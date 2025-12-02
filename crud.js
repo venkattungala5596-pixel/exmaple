@@ -21,7 +21,7 @@ app.put('/', (req, res) => {
 app.delete('/', (req, res) => {
   for (let i = 0; i < players.length; i++) {
     if (players[i] === req.body.name) {
-      players.splice(i);
+      players.splice(i,1);
     }
   }
   res.send(players);
